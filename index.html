@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Node.js Simple File Upload</title>
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        #container{
+            padding-top: 100px;
+            display: flex;
+            justify-content: space-between;
+            background-color: antiquewhite;
+        }
+        input.btn{
+            padding: 10px;
+            flex: 0.8;
+        }
+        button.btn{
+            flex: 0.15;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <center>
+        <!--  SINGLE FILE -->
+    <form action="/uploadfile" enctype="multipart/form-data" method="POST"> 
+      <input type="file" name="myFile" />
+      <input type="submit" value="Upload a file"/>
+   </form>
+
+
+
+    <hr>
+
+    <!-- MULTIPLE FILES -->
+
+    <form action="/uploadmultiple"  enctype="multipart/form-data" method="POST">
+      Select multiple images: <input type="file" name="myFiles" multiple>
+      <input type="submit" value="Upload your photos"/>
+    </form>
+
+    <hr>
+
+    <!--   PHOTO-->
+
+    <form action="/uploadphoto" enctype="multipart/form-data" method="POST"> 
+      <input type="file" name="myImage" accept="image/*" />
+      <input type="submit" value="Upload an Image"/>
+    </form>
+
+  </center>
+    </div>
+    <script type="text/javascript">
+        document.getElementById("file").value = "";
+    </script>
+</body>
+</html>
